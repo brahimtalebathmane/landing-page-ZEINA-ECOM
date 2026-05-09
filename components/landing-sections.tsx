@@ -25,75 +25,77 @@ const faqs: Faq[] = [
 
 export function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-md items-center justify-between px-3 py-2.5">
-      <button className="rounded-md bg-brand px-3 py-1.5 text-[11px] font-semibold text-white shadow">
-        اغتنم العرض الآن
-      </button>
-      <div className="flex items-center gap-2">
-        <div className="h-px w-16 bg-black/60" />
-        <span className="text-[14px] font-semibold">متجر</span>
+    <header className="sticky top-0 z-30 border-b border-black/5 bg-[#eef5ed]/90 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-8">
+        <button className="rounded-lg bg-brand px-4 py-2 text-xs font-semibold text-white shadow-soft transition hover:bg-brandDark">
+          اطلب الآن
+        </button>
+        <div className="hidden items-center gap-6 text-sm font-medium text-neutral-700 md:flex">
+          <a href="#features">المميزات</a>
+          <a href="#testimonials">آراء العملاء</a>
+          <a href="#faq">الأسئلة الشائعة</a>
+        </div>
+        <Image src="/logo.png" alt="زينة" width={84} height={32} className="h-8 w-auto" />
       </div>
-      <Image src="/logo.png" alt="زينة" width={74} height={30} className="h-7 w-auto" />
     </header>
   );
 }
 
 export function Hero() {
   return (
-    <section className="mx-auto w-full max-w-md px-3 pb-3 pt-3 text-center">
-      <h1 className="text-[40px] font-black leading-none text-brand">راقب صحتك الآن</h1>
-      <h2 className="text-[40px] font-black leading-none text-brand">من منزلك</h2>
-      <p className="mt-1 text-[14px] text-neutral-700">جهاز قياس السكر يراقب الجلوكوز عبر شريط اختبار بدقة عالية</p>
-
-      <div className="dots-bg mt-4 rounded-md p-3.5">
-        <div className="flex h-48 items-center justify-center rounded-md border border-black/30 bg-black/5 text-4xl font-semibold text-white">
+    <section className="mx-auto grid w-full max-w-6xl gap-6 px-4 pb-8 pt-8 md:grid-cols-2 md:items-center md:px-8 md:pt-12">
+      <div className="text-center md:text-right">
+        <div className="mb-3 inline-block rounded-full bg-brand/10 px-4 py-1 text-xs font-semibold text-brand">
+          خصم %50 - لفترة محدودة
+        </div>
+        <h1 className="text-4xl font-black leading-tight text-[#15321b] md:text-5xl">راقب صحتك الآن من منزلك</h1>
+        <p className="mt-3 text-sm leading-7 text-neutral-700 md:text-base">
+          جهاز قياس السكر يراقب الجلوكوز في الدم عبر شريط اختبار سريع ودقيق، مما يساعد مرضى السكري على متابعة مستويات السكر اليومية بسهولة.
+        </p>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+          <a
+            href="#offer"
+            className="rounded-lg bg-brand px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-brandDark"
+          >
+            اغتنم العرض الآن
+          </a>
+          <span className="text-xs font-medium text-neutral-600">الدفع عند الاستلام</span>
+        </div>
+        <div className="mt-5 inline-flex items-center gap-3 rounded-xl border border-[#d7e5d5] bg-white px-3 py-3 shadow-sm">
+          <div className="rounded-lg bg-[#f1f7f1] px-3 py-1 text-sm font-black text-brand">1500 MRU</div>
+          <div className="text-xs text-neutral-500 line-through">2000 MRU</div>
+          <div className="text-xs font-semibold text-brand">وفر 500 أوقية اليوم فقط</div>
+        </div>
+      </div>
+      <div className="rounded-2xl border border-[#d5e6d2] bg-white p-4 shadow-soft">
+        <div className="dots-bg flex h-64 items-center justify-center rounded-xl text-3xl font-bold text-white md:h-[350px]">
           صورة أو فيديو
         </div>
-        <div className="mt-2 grid grid-cols-3 rounded-full bg-[#6fa76f] px-3 py-1.5 text-[17px] font-black text-white">
-          <span>خصم %50</span>
-          <span className="text-center line-through decoration-2">2000 MRU</span>
-          <span className="text-left">1500 MRU</span>
-        </div>
-      </div>
-
-      <h2 className="mt-2 text-[42px] font-black leading-none">جهاز قياس السكر</h2>
-      <p className="mt-1 text-[18px] text-neutral-800">يساعد مرضى السكري في متابعة مستويات السكر بسهولة</p>
-
-      <div className="mx-1 mt-3 rounded-2xl bg-[#bfd1be] p-3 shadow-soft">
-        <div className="flex items-center gap-2">
-          <div className="text-left text-sm leading-none text-yellow-500">★★★★★</div>
-          <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-white bg-brand">
-            <div className="flex h-full w-full items-center justify-center text-xl">👤</div>
-          </div>
-          <div className="flex-1 text-right">
-            <div className="text-[34px] font-black leading-none">محمد عالي</div>
-            <p className="mt-1 text-[19px] leading-none">منتج فعلا يستحق التجربة</p>
+        <div className="mt-4 rounded-xl border border-[#dae8d7] bg-[#f7fbf6] p-3">
+          <div className="flex items-start gap-3">
+            <div className="mt-1 text-left text-sm text-yellow-500">★★★★★</div>
+            <div className="h-10 w-10 rounded-full bg-brand/80 text-center leading-10 text-white">👤</div>
+            <div className="text-right">
+              <p className="text-base font-black text-neutral-900">محمد عالي</p>
+              <p className="text-sm text-neutral-700">منتج فعلا يستحق التجربة</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <p className="mt-2 text-[22px] font-black text-brand">وفر 500 أوقية اليوم فقط!</p>
-      <a
-        href="#offer"
-        className="inline-block rounded-md bg-brand px-4 py-1.5 text-[36px] font-black leading-none text-white shadow"
-      >
-        اغتنم العرض الآن
-      </a>
-      <p className="mt-1 text-[13px] text-neutral-700">ادفع عند الاستلام</p>
     </section>
   );
 }
 
 export function Features() {
   return (
-    <section className="mx-auto w-full max-w-md rounded-2xl bg-white px-2 py-4">
-      <h3 className="pb-2 text-center text-[42px] font-black text-brand">المميزات</h3>
-      <div className="grid grid-cols-4 gap-2">
+    <section id="features" className="mx-auto w-full max-w-6xl px-4 py-8 md:px-8">
+      <h3 className="text-center text-3xl font-black text-[#15321b] md:text-4xl">المميزات</h3>
+      <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
         {features.map((item, idx) => (
-          <article key={idx} className="rounded-3xl border border-[#b8c9b7] p-2 text-center">
-            <div className="mx-auto h-16 w-16 rounded-full border border-[#7ea47c] bg-[#f8fff6]" />
-            <h4 className="mt-2 text-[18px] font-black">{item.title}</h4>
-            <p className="text-[12px] leading-tight">{item.subtitle}</p>
+          <article key={idx} className="rounded-2xl border border-[#d7e5d5] bg-white p-4 text-center shadow-sm">
+            <div className="mx-auto h-14 w-14 rounded-full border border-[#b8d1b4] bg-[#f1f8ef]" />
+            <h4 className="mt-3 text-base font-black text-neutral-900">{item.title}</h4>
+            <p className="mt-1 text-xs leading-5 text-neutral-600">{item.subtitle}</p>
           </article>
         ))}
       </div>
@@ -103,10 +105,11 @@ export function Features() {
 
 export function ProductMedia({ title = "صورة" }: { title?: string }) {
   return (
-    <section className="dots-bg mt-3 py-10">
-      <div className="mx-auto w-full max-w-md text-center">
-        <div className="h-44 rounded-none border-y border-black/30 bg-black/10" />
-        <h3 className="stroke-title -mt-24 text-[48px] font-black text-white">{title}</h3>
+    <section className="dots-bg mt-2 py-10">
+      <div className="mx-auto w-full max-w-6xl px-4 text-center md:px-8">
+        <div className="flex h-56 items-center justify-center rounded-2xl border border-white/20 bg-black/10 md:h-80">
+          <h3 className="stroke-title text-4xl font-black text-white md:text-6xl">{title}</h3>
+        </div>
       </div>
     </section>
   );
@@ -114,16 +117,16 @@ export function ProductMedia({ title = "صورة" }: { title?: string }) {
 
 export function Testimonials() {
   return (
-    <section className="noise-bg px-1 py-4">
-      <div className="mx-auto w-full max-w-md text-center">
-        <h3 className="text-[34px] font-black">تقييم 4.8 من أكثر 5000 مستخدم</h3>
-        <div className="mt-2 grid grid-cols-4 gap-2">
+    <section id="testimonials" className="noise-bg py-8">
+      <div className="mx-auto w-full max-w-6xl px-4 text-center md:px-8">
+        <h3 className="text-3xl font-black text-[#15321b] md:text-4xl">تقييم 4.8 من أكثر 5000 مستخدم</h3>
+        <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
           {testimonials.map((item, idx) => (
-            <article key={idx} className="rounded-md bg-brand px-1 py-2 text-white">
-              <div className="text-left text-[11px] text-yellow-400">★★★★★</div>
-              <p className="mt-1 h-14 overflow-hidden text-[10px] leading-tight">{item.text}</p>
-              <h4 className="mt-1 text-[14px] font-black">{item.name}</h4>
-              <div className="mx-auto mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-white text-sm">
+            <article key={idx} className="rounded-xl bg-brand p-3 text-white shadow-soft">
+              <div className="text-left text-xs text-yellow-300">★★★★★</div>
+              <p className="mt-2 min-h-16 text-xs leading-5 text-white/95">{item.text}</p>
+              <h4 className="mt-2 text-sm font-black">{item.name}</h4>
+              <div className="mx-auto mt-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm">
                 👤
               </div>
             </article>
@@ -136,19 +139,19 @@ export function Testimonials() {
 
 export function StatsBar() {
   return (
-    <section className="bg-[#00631f] py-2 text-white">
-      <div className="mx-auto grid w-full max-w-md grid-cols-3 text-center">
+    <section className="bg-[#0a6b24] py-4 text-white">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-3 gap-2 px-4 text-center md:px-8">
         <div>
-          <p className="text-[42px] font-black leading-none">19240+</p>
-          <p className="text-[14px]">منطقة مغطاة</p>
+          <p className="text-3xl font-black leading-none md:text-4xl">19240+</p>
+          <p className="mt-1 text-xs md:text-sm">منطقة مغطاة</p>
         </div>
         <div>
-          <p className="text-[42px] font-black leading-none">18691+</p>
-          <p className="text-[14px]">عميل راض</p>
+          <p className="text-3xl font-black leading-none md:text-4xl">18691+</p>
+          <p className="mt-1 text-xs md:text-sm">عميل راض</p>
         </div>
         <div>
-          <p className="text-[42px] font-black leading-none">47+</p>
-          <p className="text-[14px]">وكيل محلي</p>
+          <p className="text-3xl font-black leading-none md:text-4xl">47+</p>
+          <p className="mt-1 text-xs md:text-sm">وكيل محلي</p>
         </div>
       </div>
     </section>
@@ -157,23 +160,29 @@ export function StatsBar() {
 
 export function OfferSection() {
   return (
-    <section id="offer" className="bg-white py-3 text-center">
-      <h3 className="text-[40px] font-black">العرض يستحق التجربة</h3>
-      <p className="text-[14px] text-neutral-700">التقييمات مأخوذة من استطلاعات ما بعد البيع</p>
+    <section id="offer" className="mx-auto w-full max-w-6xl px-4 py-10 md:px-8">
+      <div className="rounded-2xl border border-[#d7e5d5] bg-white p-6 text-center shadow-sm">
+        <h3 className="text-3xl font-black text-[#15321b] md:text-4xl">العرض يستحق التجربة</h3>
+        <p className="mt-2 text-sm text-neutral-600">التقييمات مأخوذة من استطلاعات ما بعد البيع</p>
+        <div className="mt-5 flex items-center justify-center gap-3">
+          <span className="rounded-lg bg-[#ecf6ea] px-3 py-1 text-sm font-bold text-brand">1500 MRU</span>
+          <span className="text-sm text-neutral-500 line-through">2000 MRU</span>
+        </div>
+      </div>
     </section>
   );
 }
 
 export function FaqSection() {
   return (
-    <section className="noise-bg py-4">
-      <div className="mx-auto w-full max-w-md text-center">
-        <h3 className="stroke-title text-[46px] font-black text-brand">أسئلة شائعة</h3>
-        <div className="mx-auto mt-2 max-w-[330px] space-y-1">
+    <section id="faq" className="noise-bg py-8">
+      <div className="mx-auto w-full max-w-3xl px-4 text-center md:px-8">
+        <h3 className="text-3xl font-black text-[#15321b] md:text-4xl">أسئلة شائعة</h3>
+        <div className="mt-5 space-y-2 rounded-2xl border border-[#d7e5d5] bg-white p-4 text-right shadow-sm">
           {faqs.map((item, idx) => (
-            <details key={idx} className="border-b border-neutral-700 pb-1 text-right">
-              <summary className="cursor-pointer list-none text-[20px] font-black">{item.q}</summary>
-              <p className="mt-1 text-[14px] text-neutral-700">{item.a}</p>
+            <details key={idx} className="rounded-lg border border-[#e8efe6] px-3 py-2">
+              <summary className="cursor-pointer list-none text-sm font-bold text-neutral-900 md:text-base">{item.q}</summary>
+              <p className="mt-2 text-xs leading-6 text-neutral-700 md:text-sm">{item.a}</p>
             </details>
           ))}
         </div>
@@ -184,27 +193,35 @@ export function FaqSection() {
 
 export function FinalCta() {
   return (
-    <section className="dots-bg py-5 text-center">
-      <p className="text-3xl font-black text-white">كمية قليلة جدا متبقية</p>
-      <button className="mt-2 rounded-md bg-white px-4 py-1 text-[18px] font-bold text-brand">
-        اغتنم العرض الآن
-      </button>
+    <section className="dots-bg py-10 text-center">
+      <div className="mx-auto max-w-xl px-4">
+        <p className="text-3xl font-black text-white md:text-4xl">كمية قليلة جدا متبقية</p>
+        <p className="mt-2 text-sm text-white/90">احجز جهازك الآن واستفد من السعر المخفض قبل انتهاء العرض</p>
+        <button className="mt-4 rounded-lg bg-white px-6 py-2.5 text-sm font-bold text-brand shadow-soft">
+          اغتنم العرض الآن
+        </button>
+      </div>
     </section>
   );
 }
 
 export function Footer() {
   return (
-    <footer className="bg-[#f3f3f3] pt-5 text-right">
-      <div className="mx-auto w-full max-w-md px-6">
-        <h4 className="text-[30px] font-black">جهات اتصال</h4>
-        <p className="mt-1 text-[14px]">الهاتف: +222 33713957</p>
-        <p className="text-[14px]">الواتساب: +222 33713957</p>
-        <p className="text-[14px]">الإيميل: support@zeinaa.net</p>
+    <footer className="bg-[#f3f3f3] pt-8 text-right">
+      <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 pb-8 md:grid-cols-2 md:px-8">
+        <div>
+          <h4 className="text-2xl font-black text-[#15321b]">جهات اتصال</h4>
+          <p className="mt-2 text-sm text-neutral-700">الهاتف: +222 33713957</p>
+          <p className="text-sm text-neutral-700">الواتساب: +222 33713957</p>
+          <p className="text-sm text-neutral-700">الإيميل: support@zeinaa.net</p>
+        </div>
+        <div className="text-sm text-neutral-600 md:text-left">
+          <p>زينة منصة تسوق تهتم بتقديم منتجات صحية موثوقة بجودة عالية وأسعار مناسبة.</p>
+        </div>
       </div>
-      <div className="mt-5 bg-[#00631f] py-3 text-center text-white">
-        <p className="text-[44px] font-black leading-none">زينة</p>
-        <p className="text-[12px]">جميع الحقوق محفوظة 2026</p>
+      <div className="bg-[#0a6b24] py-4 text-center text-white">
+        <p className="text-4xl font-black leading-none">زينة</p>
+        <p className="mt-1 text-xs">جميع الحقوق محفوظة 2026</p>
       </div>
     </footer>
   );

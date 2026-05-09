@@ -40,7 +40,7 @@ body {
 
 .page-frame {
   margin: 0 auto;
-  max-width: 390px;
+  max-width: 1440px;
   min-height: 100vh;
   background: #eef5ed;
 }
