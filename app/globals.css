@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma, "Arial", sans-serif;
+  background: #f1f6ef;
+  color: #0b0b0b;
+}
+
+.dots-bg {
+  background-color: #0f6f22;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.35) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+.noise-bg {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+    repeating-radial-gradient(circle at 0 0, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 3px);
+  background-size: auto, 6px 6px;
+}
+
+.stroke-title {
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
