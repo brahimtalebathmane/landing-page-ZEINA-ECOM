@@ -13,7 +13,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="mx-auto min-h-screen w-full bg-lightBg">
+    <main className="page-frame">
       <Header />
       <Hero />
       <Features />

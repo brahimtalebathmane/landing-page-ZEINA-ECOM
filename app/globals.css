@@ -13,6 +13,10 @@ body {
   color: #0b0b0b;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .dots-bg {
   background-color: #0f6f22;
   background-image: radial-gradient(rgba(0, 0, 0, 0.35) 1.2px, transparent 1.2px);
@@ -32,4 +36,11 @@ body {
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
     1px 1px 0 #fff;
+}
+
+.page-frame {
+  margin: 0 auto;
+  max-width: 390px;
+  min-height: 100vh;
+  background: #eef5ed;
 }
