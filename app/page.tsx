@@ -21,7 +21,7 @@ export default function Home() {
       <Testimonials />
       <StatsBar />
       <OfferSection />
-      <ProductMedia title="صورة أو فيديو" />
+      <ProductMedia title="فيديو" />
       <FaqSection />
       <FinalCta />
       <Footer />

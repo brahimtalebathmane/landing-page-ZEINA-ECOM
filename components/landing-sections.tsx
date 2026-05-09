@@ -5,15 +5,15 @@ type Testimonial = { name: string; text: string };
 type Faq = { q: string; a: string };
 
 const features: Feature[] = [
-  { title: "أيقونة", subtitle: "ميزة" },
-  { title: "أيقونة", subtitle: "ميزة" },
-  { title: "أيقونة", subtitle: "ميزة" },
-  { title: "أيقونة", subtitle: "ميزة" }
+  { title: "استجابة", subtitle: "سريعة وحيوية" },
+  { title: "منظم", subtitle: "وسهل المتابعة" },
+  { title: "آمن", subtitle: "وعالي الدقة" },
+  { title: "عملي", subtitle: "للاستخدام اليومي" }
 ];
 
 const testimonials: Testimonial[] = Array.from({ length: 8 }).map((_, idx) => ({
-  name: idx === 0 ? "محمد مصطفى" : "زهراء علي",
-  text: "لقد كنت أستخدم جهاز قياس السكر، والآن أنا معجب جدا بدقته وسهولة استخدامه."
+  name: idx % 2 === 0 ? "محمد مصطفى" : "زهراء عالي",
+  text: "كنت أستخدم جهاز قياس السكر لعدة أشهر، وأنا معجب جدا بدقته وسهولة استخدامه."
 }));
 
 const faqs: Faq[] = [
@@ -25,13 +25,13 @@ const faqs: Faq[] = [
 
 export function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-md items-center justify-between px-2 py-2">
+    <header className="mx-auto flex w-full max-w-md items-center justify-between px-2 py-2.5">
       <button className="rounded-md bg-brand px-3 py-1.5 text-[11px] font-semibold text-white shadow">
         اغتنم العرض الآن
       </button>
       <div className="flex items-center gap-2">
         <div className="h-px w-16 bg-black/60" />
-        <span className="text-[14px] font-semibold">متجرك</span>
+        <span className="text-[14px] font-semibold">متجرنا</span>
       </div>
       <Image src="/logo.png" alt="زينة" width={74} height={30} className="h-7 w-auto" />
     </header>
@@ -41,22 +41,23 @@ export function Header() {
 export function Hero() {
   return (
     <section className="mx-auto w-full max-w-md px-3 pb-2 pt-3 text-center">
-      <h1 className="text-[44px] font-black leading-none text-brand">نص عرض القيمة</h1>
-      <p className="mt-1 text-[14px] text-neutral-700">مثل: راقب سكر الدم بدقة وراحة في المنزل</p>
+      <h1 className="text-[42px] font-black leading-none text-brand">راقب صحتك الآن</h1>
+      <h2 className="text-[42px] font-black leading-none text-brand">من منزلك</h2>
+      <p className="mt-1 text-[14px] text-neutral-700">جهاز قياس السكر يراقب الجلوكوز عبر شريط اختبار بدقة عالية</p>
 
       <div className="dots-bg mt-4 rounded-md p-4">
         <div className="flex h-48 items-center justify-center rounded-md border border-black/30 bg-black/5 text-4xl font-semibold text-white">
           صورة أو فيديو
         </div>
-        <div className="mt-2 grid grid-cols-3 rounded-full bg-[#6fa76f] px-3 py-1 text-[22px] font-black text-white">
-          <span>الخصم</span>
-          <span className="text-center">السعر</span>
-          <span className="text-left">البيع</span>
+        <div className="mt-2 grid grid-cols-3 rounded-full bg-[#6fa76f] px-3 py-1.5 text-[18px] font-black text-white">
+          <span>خصم %50</span>
+          <span className="text-center line-through decoration-2">2000 MRU</span>
+          <span className="text-left">1500 MRU</span>
         </div>
       </div>
 
-      <h2 className="mt-2 text-[48px] font-black leading-none">اسم المنتج</h2>
-      <p className="text-[26px] leading-none text-neutral-800">شرح المنتج</p>
+      <h2 className="mt-2 text-[44px] font-black leading-none">جهاز قياس السكر</h2>
+      <p className="mt-1 text-[18px] text-neutral-800">يساعد مرضى السكري في متابعة مستويات السكر بسهولة</p>
 
       <div className="mx-1 mt-3 rounded-2xl bg-[#bfd1be] p-3 shadow-soft">
         <div className="flex items-center gap-2">
@@ -65,16 +66,16 @@ export function Hero() {
             <div className="flex h-full w-full items-center justify-center text-xl">👤</div>
           </div>
           <div className="flex-1 text-right">
-            <div className="text-[38px] font-black leading-none">اسم شخص</div>
-            <p className="mt-1 text-[24px] leading-none">تفاصيل تقييم المنتج</p>
+            <div className="text-[34px] font-black leading-none">محمد عالي</div>
+            <p className="mt-1 text-[19px] leading-none">منتج فعلا يستحق التجربة</p>
           </div>
         </div>
       </div>
 
-      <p className="mt-2 text-[16px]">—</p>
+      <p className="mt-2 text-[22px] font-black text-brand">وفر 500 أوقية اليوم فقط!</p>
       <a
         href="#offer"
-        className="inline-block rounded-md bg-brand px-4 py-1.5 text-[42px] font-black leading-none text-white shadow"
+        className="inline-block rounded-md bg-brand px-4 py-1.5 text-[38px] font-black leading-none text-white shadow"
       >
         اغتنم العرض الآن
       </a>
@@ -86,7 +87,7 @@ export function Hero() {
 export function Features() {
   return (
     <section className="mx-auto w-full max-w-md rounded-2xl bg-white px-2 py-4">
-      <h3 className="pb-2 text-center text-[42px] font-black text-brand">أهم ميزات</h3>
+      <h3 className="pb-2 text-center text-[42px] font-black text-brand">المميزات</h3>
       <div className="grid grid-cols-4 gap-2">
         {features.map((item, idx) => (
           <article key={idx} className="rounded-3xl border border-[#b8c9b7] p-2 text-center">
@@ -157,8 +158,8 @@ export function StatsBar() {
 export function OfferSection() {
   return (
     <section id="offer" className="bg-white py-3 text-center">
-      <h3 className="text-[46px] font-black">عنوان الجائزة/ العرض</h3>
-      <p className="text-[14px]">—</p>
+      <h3 className="text-[44px] font-black">العرض يستحق التجربة</h3>
+      <p className="text-[14px] text-neutral-700">التقييمات مأخوذة من استطلاعات ما بعد البيع</p>
     </section>
   );
 }
@@ -184,7 +185,7 @@ export function FaqSection() {
 export function FinalCta() {
   return (
     <section className="dots-bg py-5 text-center">
-      <p className="text-3xl font-black text-white">حمولة قليلة</p>
+      <p className="text-3xl font-black text-white">كمية قليلة جدا متبقية</p>
       <button className="mt-2 rounded-md bg-white px-4 py-1 text-[18px] font-bold text-brand">
         اغتنم العرض الآن
       </button>
